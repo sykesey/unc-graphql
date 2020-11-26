@@ -1,0 +1,105 @@
+type ElectricDistributionAssembly{
+    OBJECTID: ID
+    location: Point
+    assetgroup: String
+    assettype: String
+    associationstatus: String
+    creationdate: Date
+    creator: String
+    lastupdate: Date
+    updatedby: String
+    globalid: String
+    subnetworkname: String
+    validationstatus: String
+    statuslifecyclenormal: String
+    colorsymbol: String
+    
+    assemblies: [ElectricDistributionAssembly] @relation(name: "OUT_ASSEMBLY", direction: "OUT" )
+    devices: [ElectricDistributionAssembly] @relation(name: "OUT_DEVICE", direction: "OUT" )
+    junctions: [ElectricDistributionJunction] @relation(name: "OUT_JUNCTION", direction:"OUT" )
+}
+
+type ElectricDistributionDevice{
+    OBJECTID: ID
+    location: Point
+    assetgroup: String
+    assettype: String
+    associationstatus: String
+    creationdate: Date
+    creator: String
+    lastupdate: Date
+    updatedby: String
+    globalid: String
+    subnetworkname: String
+    validationstatus: String
+    statuslifecyclenormal: String
+    colorsymbol: String
+    
+    assemblies: [ElectricDistributionAssembly] @relation(name: "OUT_ASSEMBLY", direction: "OUT")
+    junctions: [ElectricDistributionJunction] @relation(name: "OUT_JUNCTION", direction:"OUT" )
+
+}
+
+type ElectricDistributionJunction{
+    OBJECTID: ID
+    location: Point
+    assetgroup: String
+    assettype: String
+    associationstatus: String
+    creationdate: Date
+    creator: String
+    lastupdate: Date
+    updatedby: String
+    globalid: String
+    subnetworkname: String
+    validationstatus: String
+    statuslifecyclenormal: String
+    colorsymbol: String
+    
+    assemblies: [ElectricDistributionAssembly] @relation(name: "OUT_ASSEMBLY", direction: "OUT")
+    devices: [ElectricDistributionDevice] @relation(name: "OUT_ASSEMBLY", direction: "OUT")
+    lines: [ElectricDistributionLine] @relation(name: "OUT_ASSEMBLY", direction: "OUT")
+}
+
+type ElectricDistributionLine{
+    OBJECTID: ID
+    location: Point
+    start_location: Point
+    end_location: Point
+    assetgroup: String
+    assettype: String
+    associationstatus: String
+    creationdate: Date
+    creator: String
+    lastupdate: Date
+    updatedby: String
+    globalid: String
+    subnetworkname: String
+    validationstatus: String
+    statuslifecyclenormal: String
+    colorsymbol: String
+    
+    junctions: [ElectricDistributionJunction] @relation(name: "OUT_JUNCTION", direction: "OUT")
+}
+
+
+type ElectricDistributionSubnetLine{
+    OBJECTID: ID
+    location: Point
+    start_location: Point
+    end_location: Point
+    assetgroup: String
+    assettype: String
+    associationstatus: String
+    creationdate: Date
+    creator: String
+    lastupdate: Date
+    updatedby: String
+    globalid: String
+    subnetworkname: String
+    validationstatus: String
+    statuslifecyclenormal: String
+    colorsymbol: String
+    
+    junctions: [ElectricDistributionJunction] @relation(name: "OUT_JUNCTION", direction: "OUT")
+}
