@@ -1,0 +1,8 @@
+mutation{
+  MergeElectricDistributionJunction(OBJECTID:1,
+  validationstatus:"OK",
+  location:{latitude:-33.14,longitude:151.11},
+  assetgroup:"Junction",
+  assettype:"450V")
+  {OBJECTID}
+}

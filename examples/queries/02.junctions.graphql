@@ -1,0 +1,14 @@
+query{
+    ElectricDistributionJunction{
+        validationstatus
+        location{latitude,longitude}      
+        assetgroup
+        assettype
+      lines{
+        OBJECTID
+        validationstatus
+        start_location{latitude,longitude}
+        end_location{latitude,longitude}
+      }
+    }
+}

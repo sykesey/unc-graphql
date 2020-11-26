@@ -1,0 +1,9 @@
+mutation{
+  MergeElectricDistributionLine(OBJECTID:1,
+  validationstatus:"OK",
+  start_location:{latitude:-33.14,longitude:151.11},
+  end_location:{latitude:-33.15,longitude:151.12},
+  assetgroup:"Line",
+  assettype:"450V")
+  {OBJECTID}
+}

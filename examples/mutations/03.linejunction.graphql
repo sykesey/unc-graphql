@@ -1,0 +1,6 @@
+mutation{
+  MergeElectricDistributionJunctionLines(
+    from:{ OBJECTID:1 }, 
+    to:{ OBJECTID:1 } 
+  ) { from{ OBJECTID }, to{OBJECTID} }
+}
